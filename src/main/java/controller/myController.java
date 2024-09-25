@@ -1,6 +1,7 @@
 package controller;
 
 import com.example.bewd_workshop_jbc.SnackResultSetExtractor;
+import com.example.bewd_workshop_jbc.SnackRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,5 +32,11 @@ public class myController {
     public String testDataTwo(){
         return jdbcTemplate.query("SELECT * FROM Snack", new SnackResultSetExtractor()).toString();
 
-    }}
+    }
+
+    @GetMapping("/testrow")
+    public String testRow(){
+        return jdbcTemplate.query("SELECT * FROM Snack", new SnackRowMapper()).toString();
+    }
+}
 
