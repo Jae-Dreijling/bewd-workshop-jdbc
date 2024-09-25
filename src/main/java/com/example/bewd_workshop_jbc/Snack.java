@@ -15,4 +15,9 @@ public class Snack {
                 ", calorieen=" + calorieen +
                 '}';
     }
+
+
+
 }
+
+
