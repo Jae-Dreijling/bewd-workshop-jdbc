@@ -1,5 +1,9 @@
-CREATE TABLE Snack (
-    snacknr INT PRIMARY KEY ,
-    snacknaam VARCHAR(255) NOT NULL,
-    calorieen INT NOT NULL
+CREATE TABLE Cookie
+(
+    cid          INT PRIMARY KEY,
+    manufacturer VARCHAR(255) NOT NULL,
+    cookiename   VARCHAR(255) NOT NULL,
+    rating       CHAR(5)      NOT NULL,
+    CONSTRAINT ck_ck_rating CHECK (rating IN ('*', '**', '***', '****', '*****'))
 );
+
